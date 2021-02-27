@@ -1,0 +1,38 @@
+croatian_decisions = {
+
+civilian_guns_dec = {
+
+        icon = generic_propaganda
+        available = {
+        has_completed_focus = CRO_encourage_civilian_gun_production 
+        trigger = {}
+                    }
+        visible = {
+        NOT = { has_idea = civilian_guns } 
+                  }
+        cost = 50 
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+        add_ideas = civilian_guns 
+        add_offsite_building = { type = arms_factory level = 3 }
+                          }
+                    } 
+not_civilian_guns_dec = {
+
+        icon = generic_propaganda
+        trigger = {} 
+        available = {
+        has_idea = civilian_guns
+                    }
+        visible = {
+        has_idea = civilian_guns 
+                  }
+        cost = 0 
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+        remove_ideas = civilian_guns 
+        add_offsite_building = { type = arms_factory level = -3 }
+                          }
+                    }
+}
+}

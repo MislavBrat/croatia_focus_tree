@@ -1,0 +1,9 @@
+croatian_decisions = {
+	icon = generic_propaganda
+        available = { original_tag = CRO }
+	visible = {
+        original_tag = CRO  
+        has_completed_focus = CRO_encourage_civilian_gun_production 
+                  }
+
+}
