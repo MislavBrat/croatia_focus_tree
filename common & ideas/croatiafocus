@@ -1,0 +1,1487 @@
+focus_tree = {
+	id = Croatia
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CRO
+		}
+	}
+	#Focus for Form Illyrian Defense Pact
+	focus = {
+		id = CRO_form_illyrian_defense_pact
+		icon = GFX_goal_support_democracy
+		x = 13
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_srijem_conference }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_country_leader = no 
+OR = {
+country_exists = YUG 
+country_exists = AUS 
+country_exists = ITA
+}
+		}
+		completion_reward = {
+			create_faction = "Illyrian Defense Pact" 
+every_neighbor_country = {
+country_event = {
+id = fdrcroatia.7 
+days = 1
+}
+} 
+hidden_effect = {
+set_cosmetic_tag = CRO_ILL
+}
+		}
+	}
+
+	#Focus for Form Socialist Republic of Yugoslavia
+	focus = {
+		id = CRO_form_socialist_republic_of_yugoslavia
+		icon = GFX_focus_generic_join_comintern
+		x = 11
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_spread_the_socialist_ideals }
+		search_filters = { FOCUS_FILTER_TFV_AUTONOMY } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			OR = {
+NOT = {country_exists = YUG} 
+YUG = {is_puppet_of = CRO} 
+}
+		}
+		available = {
+			OR = {
+YUG = {communism > 0.45} 
+YUG = {has_government = communism}
+}
+		}
+		completion_reward = {
+			YUG = {
+country_event = {
+id = fdrcroatia.6 
+days = 1 
+}
+}
+		}
+	}
+
+	#Focus for Stabilize the Goverment
+	focus = {
+		id = CRO_stabilize_the_goverment
+		icon = GFX_goal_generic_neutrality_focus
+		x = 14
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = CRO_illyrian_movement 
+			focus = CRO_begin_croatisation_program 
+			focus = CRO_multicultural_stateism 
+			focus = CRO_holy_army_of_saint_stepinac 
+		}
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Multi-Cultural Stateism
+	focus = {
+		id = CRO_multicultural_stateism
+		icon = GFX_CRO_multicultural_stateism-80929
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_accept_bosnian_minorities }
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			## manpower buff 
+add_ideas = multi_cultural_state
+		}
+	}
+
+	#Focus for Boost Croatian Population in Istria
+	focus = {
+		id = CRO_boost_croatian_population_in_istria
+		icon = GFX_focus_CZE_german_puppet
+		x = 12
+		y = 5
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_begin_croatisation_program }
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_stability > 0.65 
+owns_state = 736
+		}
+		completion_reward = {
+			every_neighbor_country = {remove_state_core = 736}
+		}
+	}
+
+	#Focus for Encourage Civilian Gun Production
+	focus = {
+		id = CRO_encourage_civilian_gun_production
+		icon = GFX_goal_generic_military_sphere
+		x = 21
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_employ_militarist_advisors }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			unlock_decision_tooltip = civilian_guns_dec
+		}
+	}
+
+	#Focus for Zara Oil Production
+	focus = {
+		id = CRO_zara_oil_production
+		icon = GFX_goal_generic_oil_refinery
+		x = 20
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = CRO_encourage_civilian_gun_production 
+			focus = CRO_zagrebsplit_railway 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			owns_state = 163
+		}
+		completion_reward = {
+			add_resource = {
+type = oil 
+amount = 3 
+state = 163
+}
+		}
+	}
+
+	#Focus for Employ Militarist Advisors
+	focus = {
+		id = CRO_employ_militarist_advisors
+		icon = GFX_CRO_employ_militarist_advisors-81228
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_early_industrialisation }
+		mutually_exclusive = { focus = CRO_employ_agrarian_advisors }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 3 
+ add_building_construction = {
+ type = arms_factory
+ level = 3 
+ instant_build = yes
+ }
+
+ }
+		}
+	}
+
+	#Focus for Employ Agrarian Advisors
+	focus = {
+		id = CRO_employ_agrarian_advisors
+		icon = GFX_CRO_employ_agrarian_advisors-81227
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_early_industrialisation }
+		mutually_exclusive = { focus = CRO_employ_militarist_advisors }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			owns_state = 103 
+owns_state = 109
+		}
+		completion_reward = {
+			103 = {
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 2 
+ add_building_construction = {
+ type = industrial_complex
+ level = 2 
+ instant_build = yes
+ }
+
+ }
+  109 = {
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 2 
+ add_building_construction = {
+ type = industrial_complex
+ level = 2 
+ instant_build = yes
+ }
+
+ }
+		}
+	}
+
+	#Focus for Early Industrialisation
+	focus = {
+		id = CRO_early_industrialisation
+		icon = GFX_goal_generic_production2
+		x = 20
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_rise_from_the_ashes }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+idea = early_industr 
+days = 365
+}
+		}
+	}
+
+	#Focus for Bomber Armament
+	focus = {
+		id = CRO_bomber_armament
+		icon = GFX_goal_generic_air_bomber
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_expand_croatian_airforce }
+		mutually_exclusive = { focus = CRO_fighter_upgrade }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 1 
+technology = strategic_bomber1 
+technology = strategic_bomber2 
+technology = strategic_bomber3 
+category = tactical_bomber
+}
+		}
+	}
+
+	#Focus for Invest in Croatian Submarines
+	focus = {
+		id = CRO_invest_in_croatian_submarines
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 9
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_rule_the_seven_seas }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 1 
+category = ss_tech
+}
+		}
+	}
+
+	#Focus for Fighter Upgrade
+	focus = {
+		id = CRO_fighter_upgrade
+		icon = GFX_goal_generic_air_fighter2
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_expand_croatian_airforce }
+		mutually_exclusive = { focus = CRO_bomber_armament }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 1 
+technology = early_fighter 
+technology = fighter1 
+technology = fighter2 
+technology = fighter3 
+technology = heavy_fighter1 
+technology = heavy_fighter2 
+technology = heavy_fighter3
+}
+		}
+	}
+
+	#Focus for Land Army Investment
+	focus = {
+		id = CRO_land_army_investment
+		icon = GFX_focus_generic_combined_arms
+		x = 3
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_army_development }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 2 
+category = infantry_tech
+}
+		}
+	}
+
+	#Focus for Zagreb Tank Factory
+	focus = {
+		id = CRO_zagreb_tank_factory
+		icon = GFX_focus_generic_tank_production
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_vehicle_mechanization }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			owns_state = 109
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ } 
+  add_tech_bonus = {
+bonus = 1 
+uses = 1 
+category = armor
+}
+		}
+	}
+
+	#Focus for Vehicle Mechanization
+	focus = {
+		id = CRO_vehicle_mechanization
+		icon = GFX_goal_generic_build_tank
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_land_army_investment }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 1 
+category = cat_mechanized_equipment
+}
+		}
+	}
+
+	#Focus for Artillery Equipment
+	focus = {
+		id = CRO_artillery_equipment
+		icon = GFX_goal_generic_army_artillery2
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_land_army_investment }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 1 
+category = artillery
+}
+		}
+	}
+
+	#Focus for Expand Croatian Airforce
+	focus = {
+		id = CRO_expand_croatian_airforce
+		icon = GFX_goal_generic_air_production
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_army_development }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+add_building_construction = { 
+type = air_base 
+level = 3 
+instant_build = yes }
+}
+		}
+	}
+
+	#Focus for Call a Crusade for Instanbul
+	focus = {
+		id = CRO_call_a_crusade_for_instanbul
+		icon = GFX_focus_TUR_the_montreux_convention
+		x = 17
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_letter_for_the_papal_states }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {country_exists = TUR}
+		}
+		available = {
+			country_exists = TUR 
+TUR = {owns_state = 797}
+		}
+		completion_reward = {
+			ITA = {
+country_event = {
+id = fdrcroatia.5 
+days = 1 
+} 
+} 
+declare_war_on = {
+target = TUR 
+type = take_state_focus 
+generator = { 797 }
+}
+		}
+	}
+
+	#Focus for Socialist Economic Reforms
+	focus = {
+		id = CRO_socialist_economic_reforms
+		icon = GFX_goal_generic_soviet_construction
+		x = 11
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_invite_josip_tito }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 3 
+category = industry
+}
+		}
+	}
+
+	#Focus for Allow Free Market
+	focus = {
+		id = CRO_allow_free_market
+		icon = GFX_goal_generic_consumer_goods
+		x = 13
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_invite_stjepan_radi }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = free_trade 
+add_political_power = 50
+		}
+	}
+
+	#Focus for Appoint Antun Bauer
+	focus = {
+		id = CRO_appoint_antun_bauer
+		icon = GFX_CRO_appoint_antun_bauer-80940
+		x = 17
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_one_man_dictatorship }
+		mutually_exclusive = { focus = CRO_appoint_ante_paveli }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = neutrality
+		}
+		completion_reward = {
+			hidden_effect = {
+retire_country_leader = yes
+} 
+create_country_leader = {
+ name = "Antun Bauer" 
+desc = "" 
+picture = "Portrait_Yugoslavia_Peter_II.dds" 
+expire = "1965.1.1" 
+ideology = despotism 
+traits = {
+}
+ }
+		}
+	}
+
+	#Focus for Appoint Ante Pavelić
+	focus = {
+		id = CRO_appoint_ante_paveli
+		icon = GFX_CRO_appoint_ante_paveli-80939
+		x = 15
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_one_man_dictatorship }
+		mutually_exclusive = { focus = CRO_appoint_antun_bauer }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = fascism
+		}
+		completion_reward = {
+			hidden_effect = {
+retire_country_leader = yes
+} 
+create_country_leader = {
+ name = "Ante Pavelić" 
+desc = "" 
+picture = "Portrait_Croatia_Ante_Pavelic.dds" 
+expire = "1965.1.1" 
+ideology = nazism
+traits = {
+}
+ }
+		}
+	}
+
+	#Focus for Invite Josip Tito
+	focus = {
+		id = CRO_invite_josip_tito
+		icon = GFX_CRO_invite_josip_tito-80934
+		x = 11
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_assemble_the_illyrian_parlament }
+		mutually_exclusive = { focus = CRO_invite_stjepan_radi }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = communism
+		}
+		completion_reward = {
+			hidden_effect = {
+retire_country_leader = yes
+} 
+create_country_leader = {
+ name = "Josip Broz Tito" 
+desc = "TITO_DESC" 
+picture = "Portrait_Yugoslavia_Josip_Broz_Tito.dds" 
+expire = "1965.1.1" 
+ideology = marxism
+traits = {
+}
+ }
+		}
+	}
+
+	#Focus for Invest in New Machine Tools
+	focus = {
+		id = CRO_invest_in_new_machine_tools
+		icon = GFX_goal_generic_production
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_early_industrialisation }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 2 
+category = construction_tech
+}
+		}
+	}
+
+	#Focus for Expand Novine Horvatzke
+	focus = {
+		id = CRO_expand_novine_horvatzke
+		icon = GFX_CRO_expand_novine_horvatzke-80707
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_allow_serb_and_croat_patriotism }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			## Political Power gain 
+add_ideas = novine_horvatzke
+		}
+	}
+
+	#Focus for Slavic Fortress of Catholicism
+	focus = {
+		id = CRO_slavic_fortress_of_catholicism
+		icon = GFX_CRO_slavic_fortress_of_catholicism-80746
+		x = 17
+		y = 3
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_only_belief_in_christ_allowed }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			## Theocracy support 
+add_ideas = catholic_fortress
+		}
+	}
+
+	#Focus for Allow Serb and Croat Patriotism
+	focus = {
+		id = CRO_allow_serb_and_croat_patriotism
+		icon = GFX_CRO_allow_serb_and_croat_patriotism-80760
+		x = 11
+		y = 2
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_declaration_of_rijeka }
+		mutually_exclusive = { focus = CRO_censor_serbian_press }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.025 
+add_political_power = 25
+		}
+	}
+
+	#Focus for Assert Control in Ljubljana
+	focus = {
+		id = CRO_assert_control_in_ljubljana
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 15
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_militarization_of_the_state }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {country_exists = SLV}
+		}
+		available = {
+			country_exists = SLV
+		}
+		completion_reward = {
+			declare_war_on = {
+target = SLV 
+type = annex_everything
+}
+		}
+	}
+
+	#Focus for Rise From the Ashes
+	focus = {
+		id = CRO_rise_from_the_ashes
+		icon = GFX_CRO_rise_from_the_ashes-80741
+		x = 14
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05 
+add_political_power = 50
+		}
+	}
+
+	#Focus for Army Development
+	focus = {
+		id = CRO_army_development
+		icon = GFX_focus_generic_military_mission
+		x = 7
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_rise_from_the_ashes }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 10
+		}
+	}
+
+	#Focus for Declaration of Rijeka
+	focus = {
+		id = CRO_declaration_of_rijeka
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 14
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_rise_from_the_ashes }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			HUN = {
+add_opinion_modifier = {
+target = CRO 
+modifier = large_decrease
+}
+}
+		}
+	}
+
+	#Focus for Censor Serbian Press
+	focus = {
+		id = CRO_censor_serbian_press
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 13
+		y = 2
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_declaration_of_rijeka }
+		mutually_exclusive = { focus = CRO_allow_serb_and_croat_patriotism }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50 
+add_stability = -0.025
+		}
+	}
+
+	#Focus for Srijem Conference
+	focus = {
+		id = CRO_srijem_conference
+		icon = GFX_focus_rom_parties_end
+		x = 13
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_allow_free_market }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			45 = { is_owned_by = YUG }
+		}
+		completion_reward = {
+			YUG = {
+country_event = {
+days = 1 
+id = fdrcroatia.1
+}
+}
+		}
+	}
+
+	#Focus for Begin Croatisation Program
+	focus = {
+		id = CRO_begin_croatisation_program
+		icon = GFX_goal_generic_forceful_treaty
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_fund_the_ustae_organization }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			## Weekly stability 
+add_ideas = croatisation
+		}
+	}
+
+	#Focus for One Man Dictatorship
+	focus = {
+		id = CRO_one_man_dictatorship
+		icon = GFX_focus_usa_voter_registration_act
+		x = 16
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_stabilize_the_goverment }
+		mutually_exclusive = { focus = CRO_assemble_the_illyrian_parlament }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = {
+id = fdrcroatia.3 
+days = 1
+}
+		}
+	}
+
+	#Focus for Invite Stjepan Radić
+	focus = {
+		id = CRO_invite_stjepan_radi
+		icon = GFX_CRO_invite_stjepan_radi-80931
+		x = 13
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_assemble_the_illyrian_parlament }
+		mutually_exclusive = { focus = CRO_invite_josip_tito }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = democratic
+		}
+		completion_reward = {
+			hidden_effect = {
+retire_country_leader = yes
+} 
+create_country_leader = {
+ name = "Stjepan Radić" 
+desc = "" 
+picture = "Portrait_Yugoslavia_Peter_II.dds" 
+expire = "1965.1.1" 
+ideology = liberalism 
+traits = {
+}
+ }
+		}
+	}
+
+	#Focus for Assemble the Illyrian Parlament
+	focus = {
+		id = CRO_assemble_the_illyrian_parlament
+		icon = GFX_CRO_assemble_the_illyrian_parlament-80930
+		x = 12
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_stabilize_the_goverment }
+		mutually_exclusive = { focus = CRO_one_man_dictatorship }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = {
+id = fdrcroatia.2 
+days = 1
+}
+		}
+	}
+
+	#Focus for Illyrian Movement
+	focus = {
+		id = CRO_illyrian_movement
+		icon = GFX_focus_BUL_free_balkan_states
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_expand_novine_horvatzke }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Fund the Ustaše Organization
+	focus = {
+		id = CRO_fund_the_ustae_organization
+		icon = GFX_focus_YUG_banovina_of_croatia
+		x = 13
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_censor_serbian_press }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Luxism support 
+add_ideas = ustase_org
+		}
+	}
+
+	#Focus for Legalize All Faiths
+	focus = {
+		id = CRO_legalize_all_faiths
+		icon = GFX_focus_por_concordat
+		x = 15
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_declaration_of_rijeka }
+		mutually_exclusive = { focus = CRO_only_belief_in_christ_allowed }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Only Belief in Christ Allowed
+	focus = {
+		id = CRO_only_belief_in_christ_allowed
+		icon = GFX_goal_generic_political_pressure
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_declaration_of_rijeka }
+		mutually_exclusive = { focus = CRO_legalize_all_faiths }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = -0.075
+		}
+	}
+
+	#Focus for Accept Bosnian Minorities
+	focus = {
+		id = CRO_accept_bosnian_minorities
+		icon = GFX_focus_YUG_divide_bosnia
+		x = 15
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_legalize_all_faiths }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			BOS = {
+add_opinion_modifier = {
+target = CRO 
+modifier = huge_increase
+}
+}
+		}
+	}
+
+	#Focus for Holy Army of Saint Stepinac
+	focus = {
+		id = CRO_holy_army_of_saint_stepinac
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = 17
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_slavic_fortress_of_catholicism }
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			## manpower and attack bonus 
+add_ideas = holy_cro_army
+		}
+	}
+
+	#Focus for Militarization of the State
+	focus = {
+		id = CRO_militarization_of_the_state
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 15
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_appoint_ante_paveli }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 3 
+ add_building_construction = {
+ type = arms_factory
+ level = 3 
+ instant_build = yes
+ }
+
+ }
+		}
+	}
+
+	#Focus for Letter for the Papal States
+	focus = {
+		id = CRO_letter_for_the_papal_states
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 17
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_appoint_antun_bauer }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			## tag for Papal States 
+country_exists = ITA
+		}
+		completion_reward = {
+			ITA = {
+country_event = {
+id = fdrcroatia.4 
+days = 1
+}
+}
+		}
+	}
+
+	#Focus for Spread the Socialist Ideals
+	focus = {
+		id = CRO_spread_the_socialist_ideals
+		icon = GFX_focus_ger_great_red_menace
+		x = 11
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_socialist_economic_reforms }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_neighbor_country = {
+add_timed_idea = {
+idea = socialist_influence 
+days = 200
+}
+}
+		}
+	}
+
+	#Focus for Rule the Seven Seas
+	focus = {
+		id = CRO_rule_the_seven_seas
+		icon = GFX_goal_generic_amphibious_assault
+		x = 9
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_army_development }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_owned_state = {is_coastal = yes}
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+ limit = {
+ free_building_slots = {
+ building = dockyard
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 3 
+ add_building_construction = {
+ type = dockyard
+ level = 3 
+ instant_build = yes
+ }
+
+ }
+		}
+	}
+
+	#Focus for Professional General Training Academy
+	focus = {
+		id = CRO_professional_general_training_academy
+		icon = GFX_focus_generic_military_academy
+		x = 3
+		y = 4
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_land_army_investment }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 2 
+category = land_doctrine
+} 
+add_ideas = pgta
+		}
+	}
+
+	#Focus for Advanced Adriatic Fleet
+	focus = {
+		id = CRO_advanced_adriatic_fleet
+		icon = GFX_goal_generic_navy_battleship
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_rule_the_seven_seas }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 2 
+category = bb_tech 
+categoty = bc_tech 
+category = dd_tech 
+category_= cv_tech 
+category = sshb_tech 
+category = ca_tech
+}
+		}
+	}
+
+	#Focus for Close Air Support Planes
+	focus = {
+		id = CRO_close_air_support_planes
+		icon = GFX_goal_generic_CAS
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = CRO_fighter_upgrade 
+			focus = CRO_bomber_armament 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+bonus = 1 
+uses = 1 
+category = cas_bomber
+}
+		}
+	}
+
+	#Focus for Zagreb-Split Railway
+	focus = {
+		id = CRO_zagrebsplit_railway
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 19
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_employ_agrarian_advisors }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			owns_state = 103 
+owns_state = 109
+		}
+		completion_reward = {
+			103 = {
+add_building_construction = {type = infrastructure 
+level = 7
+instant_build = yes}
+
+} 
+  109 = {
+add_building_construction = {type = infrastructure 
+level = 7 
+instant_build = yes}
+
+}
+		}
+	}
+
+	#Focus for Varaždin Research Institute
+	focus = {
+		id = CRO_varadin_research_institute
+		icon = GFX_focus_research2
+		x = 23
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_invest_in_new_machine_tools }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Every Man Equal Policy
+	focus = {
+		id = CRO_every_man_equal_policy
+		icon = GFX_focus_generic_concessions
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_multicultural_stateism }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_stability > 0.5
+		}
+		completion_reward = {
+			every_neighbor_country = {
+add_opinion_modifier = {
+target = CRO 
+modifier = huge_increase
+}
+}
+		}
+	}
+
+	#Focus for Purify Yugoslav Lands
+	focus = {
+		id = CRO_purify_yugoslav_lands
+		icon = GFX_goal_generic_major_war
+		x = 15
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_assert_control_in_ljubljana }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			country_exists = YUG
+		}
+		completion_reward = {
+			create_wargoal = {
+type = annex_everything 
+target = YUG
+} 
+hidden_effect = {
+YUG = {
+every_owned_state = {
+add_core_of = CRO
+}
+}
+}
+		}
+	}
+
+	#Focus for Proclaim Croatian Papacy
+	focus = {
+		id = CRO_proclaim_croatian_papacy
+		icon = GFX_focus_generic_home_defense
+		x = 17
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_call_a_crusade_for_instanbul }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			controls_state = 797
+		}
+		completion_reward = {
+			797 = {add_core_of = CRO} 
+set_cosmetic_tag = CRO_PAP 
+hidden_effect = {
+add_stability = 0.2
+}
+		}
+	}
+
+	#Focus for Increase Research Spending
+	focus = {
+		id = CRO_increase_research_spending
+		icon = GFX_focus_research2
+		x = 20
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = CRO_zara_oil_production }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Complete Industrialisation
+	focus = {
+		id = CRO_complete_industrialisation
+		icon = GFX_goal_generic_construction2
+		x = 22
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = CRO_zara_oil_production 
+		}
+		prerequisite = { 
+			focus = CRO_varadin_research_institute 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {has_idea = early_industr}
+		}
+		completion_reward = {
+			add_ideas = complete_industr
+		}
+	}
+
+#End of focuses 
+ }
