@@ -1,0 +1,168 @@
+add_namespace = fdrcroatia
+
+##Event: Srijem Conference
+country_event = {
+	id = fdrcroatia.1
+	title = fdrcroatia.1.title
+	desc = fdrcroatia.1.desc
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.1.a
+		ai_chance = { factor = 1}
+		CRO = { 
+add_opinion_modifier = {
+target = YUG  
+modifier = large_decrease
+}
+} 
+CRO = { add_state_core = 45 }
+	}
+	option = {
+		name = fdrcroatia.1.b
+		ai_chance = { factor = 2}
+		CRO = { give_guarantee = YUG } 
+CRO = { transfer_state = 45 } 
+#Add Srijem state
+	}
+}
+##Event: Illyrian Parlament
+country_event = {
+	id = fdrcroatia.2
+	title = fdrcroatia.2.title
+	desc = fdrcroatia.2.desc
+	picture = GFX_report_event_pierre_laval
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.2.a
+		ai_chance = { factor = 1}
+		set_politics = {
+ruling_party = democratic 
+elections_allowed = yes
+}
+	}
+	option = {
+		name = fdrcroatia.2.b
+		ai_chance = { factor = 1}
+		set_politics = {
+ruling_party = communism 
+elections_allowed = yes
+}
+	}
+}
+##Event: Croatian Dictatorship
+country_event = {
+	id = fdrcroatia.3
+	title = fdrcroatia.3.title
+	desc = fdrcroatia.3.desc
+	picture = GFX_report_event_soviet_purge_officers_02
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.3.a
+		ai_chance = { factor = 1}
+		set_politics = {
+ruling_party = fascism 
+elections_allowed = no
+}
+	}
+	option = {
+		name = fdrcroatia.3.b
+		ai_chance = { factor = 1}
+		set_politics = {
+ruling_party = neutrality 
+elections_allowed = no
+}
+	}
+}
+##Event: Letter From Antun Bauer of Croatia.
+country_event = {
+	id = fdrcroatia.4
+	title = fdrcroatia.4.title
+	desc = fdrcroatia.4.desc
+	picture = GFX_report_event_finnish_letter
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.4.a
+		ai_chance = { factor = 2}
+		give_guarantee = CRO
+	}
+	option = {
+		name = fdrcroatia.4.b
+		ai_chance = { factor = 1}
+		CRO = { add_political_power = 50 }
+	}
+}
+##Event: Croatia calls us to a crusade!
+country_event = {
+	id = fdrcroatia.5
+	title = fdrcroatia.5.title
+	desc = fdrcroatia.5.desc
+	picture = GFX_report_event_crowd_in_prague
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.5.a
+		ai_chance = { factor = 1}
+		declare_war_on = {
+target = TUR 
+type = take_state_focus 
+generator = { 797 }
+}
+	}
+	option = {
+		name = fdrcroatia.5.b
+		ai_chance = { factor = 1}
+		add_stability = 0.01
+	}
+}
+##Event: SFRJ Proposal
+country_event = {
+	id = fdrcroatia.6
+	title = fdrcroatia.6.title
+	desc = fdrcroatia.6.desc
+	picture = GFX_report_event_stalin_meeting
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.6.a
+		ai_chance = { factor = 1}
+		CRO = {
+annex_country = {target = YUG}
+} 
+every_owned_state = {
+add_core_of = CRO
+} 
+hidden_effect = {
+CRO = {set_cosmetic_tag = YUG}
+}
+	}
+	option = {
+		name = fdrcroatia.6.b
+		ai_chance = { factor = 1}
+		CRO = {
+add_war_support = 0.1 
+create_wargoal = {
+type = annex_everything 
+target = YUG
+}
+}
+	}
+}
+##Event: Illyrian Defense Pact
+country_event = {
+	id = fdrcroatia.7
+	title = fdrcroatia.7.title
+	desc = fdrcroatia.7.desc
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = fdrcroatia.7.a
+		ai_chance = { factor = 1}
+		CRO = {add_to_faction = ROOT} 
+CRO = {add_stability = 0.05} 
+add_stability = 0.05
+	}
+	option = {
+		name = fdrcroatia.7.b
+		ai_chance = { factor = 1}
+		add_political_power = 50
+	}
+}
