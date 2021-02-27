@@ -1,0 +1,459 @@
+spriteTypes = { 
+	##Icon For: Multi-Cultural Stateism
+	SpriteType = { 
+		name = "GFX_CRO_multicultural_stateism-80929"
+		texturefile = "gfx/interface/goals/GFX_CRO_multicultural_stateism-80929.dds"
+	}
+
+	##Icon Shine For: Multi-Cultural Stateism
+	SpriteType = { 
+		name = "GFX_CRO_multicultural_stateism-80929_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_multicultural_stateism-80929.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_multicultural_stateism-80929.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_multicultural_stateism-80929.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Employ Militarist Advisors
+	SpriteType = { 
+		name = "GFX_CRO_employ_militarist_advisors-81228"
+		texturefile = "gfx/interface/goals/GFX_CRO_employ_militarist_advisors-81228.dds"
+	}
+
+	##Icon Shine For: Employ Militarist Advisors
+	SpriteType = { 
+		name = "GFX_CRO_employ_militarist_advisors-81228_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_employ_militarist_advisors-81228.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_employ_militarist_advisors-81228.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_employ_militarist_advisors-81228.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Employ Agrarian Advisors
+	SpriteType = { 
+		name = "GFX_CRO_employ_agrarian_advisors-81227"
+		texturefile = "gfx/interface/goals/GFX_CRO_employ_agrarian_advisors-81227.dds"
+	}
+
+	##Icon Shine For: Employ Agrarian Advisors
+	SpriteType = { 
+		name = "GFX_CRO_employ_agrarian_advisors-81227_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_employ_agrarian_advisors-81227.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_employ_agrarian_advisors-81227.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_employ_agrarian_advisors-81227.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Appoint Antun Bauer
+	SpriteType = { 
+		name = "GFX_CRO_appoint_antun_bauer-80940"
+		texturefile = "gfx/interface/goals/GFX_CRO_appoint_antun_bauer-80940.dds"
+	}
+
+	##Icon Shine For: Appoint Antun Bauer
+	SpriteType = { 
+		name = "GFX_CRO_appoint_antun_bauer-80940_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_appoint_antun_bauer-80940.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_appoint_antun_bauer-80940.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_appoint_antun_bauer-80940.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Appoint Ante Pavelić
+	SpriteType = { 
+		name = "GFX_CRO_appoint_ante_paveli-80939"
+		texturefile = "gfx/interface/goals/GFX_CRO_appoint_ante_paveli-80939.dds"
+	}
+
+	##Icon Shine For: Appoint Ante Pavelić
+	SpriteType = { 
+		name = "GFX_CRO_appoint_ante_paveli-80939_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_appoint_ante_paveli-80939.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_appoint_ante_paveli-80939.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_appoint_ante_paveli-80939.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Invite Josip Tito
+	SpriteType = { 
+		name = "GFX_CRO_invite_josip_tito-80934"
+		texturefile = "gfx/interface/goals/GFX_CRO_invite_josip_tito-80934.dds"
+	}
+
+	##Icon Shine For: Invite Josip Tito
+	SpriteType = { 
+		name = "GFX_CRO_invite_josip_tito-80934_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_invite_josip_tito-80934.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_invite_josip_tito-80934.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_invite_josip_tito-80934.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Expand Novine Horvatzke
+	SpriteType = { 
+		name = "GFX_CRO_expand_novine_horvatzke-80707"
+		texturefile = "gfx/interface/goals/GFX_CRO_expand_novine_horvatzke-80707.dds"
+	}
+
+	##Icon Shine For: Expand Novine Horvatzke
+	SpriteType = { 
+		name = "GFX_CRO_expand_novine_horvatzke-80707_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_expand_novine_horvatzke-80707.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_expand_novine_horvatzke-80707.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_expand_novine_horvatzke-80707.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Slavic Fortress of Catholicism
+	SpriteType = { 
+		name = "GFX_CRO_slavic_fortress_of_catholicism-80746"
+		texturefile = "gfx/interface/goals/GFX_CRO_slavic_fortress_of_catholicism-80746.dds"
+	}
+
+	##Icon Shine For: Slavic Fortress of Catholicism
+	SpriteType = { 
+		name = "GFX_CRO_slavic_fortress_of_catholicism-80746_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_slavic_fortress_of_catholicism-80746.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_slavic_fortress_of_catholicism-80746.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_slavic_fortress_of_catholicism-80746.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Allow Serb and Croat Patriotism
+	SpriteType = { 
+		name = "GFX_CRO_allow_serb_and_croat_patriotism-80760"
+		texturefile = "gfx/interface/goals/GFX_CRO_allow_serb_and_croat_patriotism-80760.dds"
+	}
+
+	##Icon Shine For: Allow Serb and Croat Patriotism
+	SpriteType = { 
+		name = "GFX_CRO_allow_serb_and_croat_patriotism-80760_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_allow_serb_and_croat_patriotism-80760.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_allow_serb_and_croat_patriotism-80760.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_allow_serb_and_croat_patriotism-80760.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Rise From the Ashes
+	SpriteType = { 
+		name = "GFX_CRO_rise_from_the_ashes-80741"
+		texturefile = "gfx/interface/goals/GFX_CRO_rise_from_the_ashes-80741.dds"
+	}
+
+	##Icon Shine For: Rise From the Ashes
+	SpriteType = { 
+		name = "GFX_CRO_rise_from_the_ashes-80741_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_rise_from_the_ashes-80741.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_rise_from_the_ashes-80741.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_rise_from_the_ashes-80741.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Invite Stjepan Radić
+	SpriteType = { 
+		name = "GFX_CRO_invite_stjepan_radi-80931"
+		texturefile = "gfx/interface/goals/GFX_CRO_invite_stjepan_radi-80931.dds"
+	}
+
+	##Icon Shine For: Invite Stjepan Radić
+	SpriteType = { 
+		name = "GFX_CRO_invite_stjepan_radi-80931_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_invite_stjepan_radi-80931.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_invite_stjepan_radi-80931.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_invite_stjepan_radi-80931.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Assemble the Illyrian Parlament
+	SpriteType = { 
+		name = "GFX_CRO_assemble_the_illyrian_parlament-80930"
+		texturefile = "gfx/interface/goals/GFX_CRO_assemble_the_illyrian_parlament-80930.dds"
+	}
+
+	##Icon Shine For: Assemble the Illyrian Parlament
+	SpriteType = { 
+		name = "GFX_CRO_assemble_the_illyrian_parlament-80930_shine"
+		texturefile = "gfx/interface/goals/GFX_CRO_assemble_the_illyrian_parlament-80930.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_assemble_the_illyrian_parlament-80930.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_CRO_assemble_the_illyrian_parlament-80930.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+ 
+ }
